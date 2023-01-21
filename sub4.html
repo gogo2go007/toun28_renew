@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서브페이지4_쇼핑</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="sub4_container">
+        <div class="sub4_main_img"></div>
+        <div class="sub4_shop_wrap"> 
+            <h2>피부데이터를 분석해 만드는 Toun28</h2>
+            <p>톤28은 최상의 재료로 신선하게 맞춤 바를거리를 빚어냅니다.</p>
+            <div class="sub4_shop_list">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="js/shop_list.js"></script>
+    <script>
+        let createTag = "";
+
+        productList.forEach(function(item,index){
+
+            createTag +=
+                `<div class="box">
+                        <a href="#"><img src="${item.imgSrc}"></a>
+                        <h3>${item.mainTitle}</h3>
+                        <p>${item.pice}</p>
+                </div>`
+        });
+
+        document.querySelector(".sub4_shop_list").innerHTML = createTag;
+    </script>
+</body>
+</html>
