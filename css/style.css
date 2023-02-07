@@ -113,23 +113,29 @@ font-family: 'Noto Serif KR', serif;
 #section .slide li .visual_txt .visual_more a {color: #fff; display: block; font-size: 14px;}
 #section .slide li .visual_txt .visual_more:hover {background-color: rgba(255, 255, 255, 0.76); border: 1px solid #10069f;}
 #section .slide li .visual_txt .visual_more:hover a {color: #10069f;}
-#section .visual button {position: absolute; top: 50%; margin-top: -114px; background-color: transparent; border: 0; cursor: pointer; opacity: 0.3; transition: all 0.5s;}
-#section .visual .prev {left: 100px;}
-#section .visual .prev:hover {opacity: 1;}
-#section .visual .next {right: 100px;}
-#section .visual .next:hover {opacity: 1;}
+#section .visual > button {position: absolute; top: 50%; margin-top: -114px; background-color: transparent; border: 0; cursor: pointer; opacity: 0.3; transition: all 0.5s;}
+#section .visual button.prev {left: 210px;}
+#section .visual button.prev:hover {opacity: 1;}
+#section .visual button.next {right: 210px;}
+#section .visual button.next:hover {opacity: 1;}
 #section .visual .vs_pager_wrap {width: 100%; display: flex; position: absolute; bottom: 80px; left: 0; justify-content: center;}
+#section .visual .visual_pager {padding-left: 10px;}
 #section .visual .visual_pager li {position: absolute; display: none;}
 #section .visual .visual_pager li.on {display: block;}
 #section .visual .visual_pager li a {color: #fff; font-size: 14px; font-weight: 100; font-family: 'Roboto', sans-serif;}
-.visual .vs_page_line {width: 1100px; height: 3px; background-color: rgba(255, 255, 255, 0.151); position: relative; left: 44px; top: 8px;}
-.visual .vs_page_line li {width: 275px; height: 3px; background-color: transparent; position: absolute; top: 0; cursor: pointer;}
+.visual .vs_page_line {width: 960px; height: 3px; background-color: rgba(255, 255, 255, 0.151); position: relative; left: 44px; top: 8px;}
+.visual .vs_page_line li {width: 25%; height: 3px; background-color: transparent; position: absolute; top: 0; cursor: pointer;}
 .visual .vs_page_line li:nth-child(1) {left: 0;}
-.visual .vs_page_line li:nth-child(2) {left: 275px;}
-.visual .vs_page_line li:nth-child(3) {left: 550px;}
-.visual .vs_page_line li:nth-child(4) {left: 825px;}
+.visual .vs_page_line li:nth-child(2) {left: 25%;}
+.visual .vs_page_line li:nth-child(3) {left: 50%;}
+.visual .vs_page_line li:nth-child(4) {left: 75%;}
 .visual .vs_page_line li.on {background-color: #10069f;}
 .visual .vs_page_line li a {background-color: #10069f;}
+.switch {padding-right: 10px;}
+.switch button {width: 12px; height: 12px; border: 0; transition: all 0.5s; cursor: pointer; position: absolute; top: 4px;}
+.switch button.play { background: url(../img/play_w.png) no-repeat center/cover ; display: none;}
+.switch button.stop { background: url(../img/pause_w.png) no-repeat center/cover ;}
+
 
 /* section영역 시작 */
 /* 비주얼 버튼_하단으로 스크롤 버튼 영역 */
@@ -343,6 +349,7 @@ font-family: 'Noto Serif KR', serif;
     .visual .vs_page_line li:nth-child(3) {left: 50%;}
     .visual .vs_page_line li:nth-child(4) {left: 75%;}
     #section .visual_wrap .down_btn {display: none;}
+   
 
     /* section영역 시작 */
     /* 비주얼 버튼_하단으로 스크롤 버튼 영역 */
@@ -488,12 +495,9 @@ font-family: 'Noto Serif KR', serif;
     /* visual시작 */
     /* 메인 롤링 이미지 영역 */
     #section .visual .slide li .visual_txt h2 { font-size: 23px; padding-bottom: 30px;}
-    #section .visual button {display: none;}
     #section .visual .vs_pager_wrap {width: 80%;  left: 29px; }
-    #section .visual .visual_pager li {position: absolute; display: none;}
-    #section .visual .visual_pager li.on {display: block;}
-    #section .visual .visual_pager li a {color: #fff; font-size: 14px; font-weight: 100; font-family: 'Roboto', sans-serif;}
-    .visual .vs_page_line {width: 100%; height: 3px; background-color: rgba(255, 255, 255, 0.151); position: relative; left: 44px; top: 8px;}
+    #section .visual .visual_pager {width: 34px; margin-left: 20px;}
+    .visual .vs_page_line { left: 30px; top: 8px;}
     .visual .vs_page_line li {width: 25%; height: 3px; background-color: transparent; position: absolute; top: 0; cursor: pointer;}
     .visual .vs_page_line li:nth-child(1) {left: 0;}
     .visual .vs_page_line li:nth-child(2) {left: 25%;}
@@ -501,6 +505,8 @@ font-family: 'Noto Serif KR', serif;
     .visual .vs_page_line li:nth-child(4) {left: 75%;}
     .visual .vs_page_line li.on {background-color: #10069f;}
     .visual .vs_page_line li a {background-color: #10069f;}
+    .switch { position: absolute; top: 0; left: 0;}
+
 
     /* section영역 시작 */
     /* 비주얼 버튼_하단으로 스크롤 버튼 영역 */
@@ -589,18 +595,16 @@ font-family: 'Noto Serif KR', serif;
     #footer .center {width: 90%;} 
 }
 
-@media screen and (max-width:479px){
-   
-}
+
 
 /* 서브페이지 메뉴*/
-#header.active {width: 100%; position: fixed; transition: all 0.5s; z-index: 22; height: 92px; display: block; background-color: #fff;}
+/* #header.active {width: 100%; position: fixed; transition: all 0.5s; z-index: 22; height: 92px; display: block; background-color: #fff;}
 #header.active .header_wrap .logo a {display: block; width: 100%; height: 22px; background: url(../img/logo_bk.png) no-repeat center /cover;}
 #header.active .gnb > li > a {font-size: 18px; color: #333; display: block; padding: 37px 0;}
 #header.active .gnb > li .depth2 {width: 100%; position: absolute; top: 92px; left: 30px; padding: 0 20px;}
 #header.active .header_wrap .icn li:nth-child(1) a {background: url(../img/ico_cart_bk.png) no-repeat center /cover;}
 #header.active .header_wrap .icn li:nth-child(2) a {background: url(../img/ico_like_bk.png) no-repeat center /cover;}
-#header.active .header_wrap .icn li:nth-child(3) a {background: url(../img/icon_lang_bk.png) no-repeat center /cover;}
+#header.active .header_wrap .icn li:nth-child(3) a {background: url(../img/icon_lang_bk.png) no-repeat center /cover;} */
 
 /* 서브페이지1_미션 시작  */
 #sub1_container {width: 100%; }
@@ -640,7 +644,7 @@ font-family: 'Noto Serif KR', serif;
 .sub1_cont4 p span {font-size: 22px; display: block; margin: 30px 0; text-align: center; font-family: 'Noto Sans KR', sans-serif; padding-bottom: 120px;}
 
 @media screen and (max-width: 1024px){
-    #header.active {height: 72px;}
+    /* #header.active {height: 72px;}
     #header.active .header_wrap {width: 96%; height: 72px; align-items: center;}
     #header.active .header_wrap .logo { width: 123px; height: 72px; padding: 25px 0;}
     #header.active .header_wrap .logo a {display: block; width: 100%; height: 22px; background: url(../img/logo_bk.png) no-repeat center /100%;}
@@ -652,7 +656,7 @@ font-family: 'Noto Serif KR', serif;
     #header.active .gnb > li .depth2 {display: none;}
     #header.active .header_wrap .icn li:last-child {display: none;}
     #header.active .header_wrap .icn li:nth-child(1) a {background: url(../img/ico_login_bk.png) no-repeat center /cover;}
-    #header.active .header_wrap .icn li:nth-child(2) a {background: url(../img/ico_cart_bk.png) no-repeat center /cover;}
+    #header.active .header_wrap .icn li:nth-child(2) a {background: url(../img/ico_cart_bk.png) no-repeat center /cover;} */
 
     #sub1_container .sub1_con1 { background:#dddddd url(../img/sub1_dog.png) no-repeat left bottom/180% auto; }
     .sub1_main_center { width: 90%; }
@@ -672,7 +676,7 @@ font-family: 'Noto Serif KR', serif;
 }
 
 @media screen and (max-width:768px) {
-    #header.active { height: 92px; }
+    /* #header.active { height: 92px; }
     #header.active .header_wrap {width: 90%; margin: 0 auto; display: block; position: relative; }
     #header.active .header_wrap .logo {width: 107px; height: 0; padding: 0; margin: 20px auto;}
     #header.active .header_wrap .logo a { background: url(../img/logo_bk.png) no-repeat center /100%;}
@@ -694,7 +698,7 @@ font-family: 'Noto Serif KR', serif;
     #header.active .m_gnb {position: relative; top: 40px;}
     #header.active .m_gnb li{width: 25px; height: 2px; background-color: #000; position: absolute;}
     #header.active .m_gnb li:nth-child(1){ top: -55px; left: 0;}
-    #header.active .m_gnb li:nth-child(2){ top: -45px; left: 0;}
+    #header.active .m_gnb li:nth-child(2){ top: -45px; left: 0;} */
 
     #sub1_container {width: 100%;  }
     #sub1_container .sub1_con1 {width: 100%; background:#dddddd url(../img/sub1_dog.png) no-repeat center bottom/150% auto; }
