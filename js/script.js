@@ -146,6 +146,20 @@ function slideMove(){
 //           top 버튼
 //           footer 아코디언
 $(document).ready(function(){
+
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 4800 && $(this).scrollTop() < 8400){
+            $(".scr_up").addClass("on");
+        }
+        else{
+            $(".scr_up").removeClass("on");
+        }
+        
+    });
+
+    $(".scr_up").click(function(){
+        $("html,body").stop().animate({scrollTop:0},500)
+    });
     // 미션 숫자 카운트 영역
     let a = 0;
     $(window).scroll(function(){
