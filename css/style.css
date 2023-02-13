@@ -671,7 +671,7 @@ font-family: 'Noto Serif KR', serif;
     #header.active .header_wrap .icn li:nth-child(2) a {background: url(../img/ico_login_bk.png) no-repeat center /100%;}
     #header.active .header_wrap .icn li:nth-child(3) a {display: none; }
 
-    #header.active .m_gnb {position: relative; top: 40px;}
+    #header.active .m_gnb { display: block; position: relative; top: 40px;  }
     #header.active .m_gnb li{width: 25px; height: 2px; background-color: #000; position: absolute;}
     #header.active .m_gnb li:nth-child(1){ top: -55px; left: 0;}
     #header.active .m_gnb li:nth-child(2){ top: -45px; left: 0;}
