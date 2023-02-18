@@ -10,7 +10,7 @@
 <body>
     <div id="header" class="active">
         <div class="header_wrap">
-            <h1 class="logo"><a href="#"></a></h1>
+            <h1 class="logo"><a href="https://gogo2go.cafe24.com/toun28_renew/index.html"></a></h1>
             <div class="gnb_wrap">
                 <div class="sub_tit_wrap">
                     <div class="sub_blu"></div>
@@ -23,7 +23,7 @@
                 </div>
                 <ul class="gnb">
                     <li>
-                        <a href="#">톤28</a>
+                        <a href="https://gogo2go.cafe24.com/toun28_renew/sub1.html">톤28</a>
                         <ul class="depth2">
                             <li><a href="#">브랜드</a></li>
                             <li><a href="#">미션</a></li>
@@ -31,13 +31,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">맞춤 구독 서비스</a>
+                        <a href="https://gogo2go.cafe24.com/toun28_renew/sub2.html">맞춤 구독 서비스</a>
                         <ul class="depth2">
                             <li><a href="#">맞춤 구독 서비스</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">아카이브</a>
+                        <a href="#self">아카이브</a>
                         <ul class="depth2">
                             <li><a href="#">아카이브</a></li>
                             <li><a href="#">IM TOUN28</a></li>
@@ -45,7 +45,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">스토어</a>
+                        <a href="https://gogo2go.cafe24.com/toun28_renew/sub4.html">스토어</a>
                         <ul class="depth2">
                             <li><a href="#">베스트</a></li>
                             <li><a href="#">스킨케어</a></li>
@@ -112,6 +112,20 @@
     </div>
     <script src="js/shop_list.js"></script>
     <script>
+        // 메뉴 서브타이틀
+        const gnb = document.querySelectorAll(".gnb > li");
+        const subTit = document.querySelectorAll(".sub_tit li");
+        for(let i = 0; i < subTit.length; i++){
+            gnb[i].addEventListener("mouseenter",function(){
+                for(let j = 0; j < subTit.length; j++){
+                    subTit[j].classList.remove("on");
+            
+                }
+                subTit[i].classList.add("on");
+            });
+        }
+
+        // 제품 불러오기
         let createTag = "";
 
         productList.forEach(function(item,index){
@@ -125,6 +139,7 @@
         });
 
         document.querySelector(".sub4_shop_list").innerHTML = createTag;
+
     </script>
 </body>
 </html>
