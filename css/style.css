@@ -103,7 +103,7 @@ font-family: 'Noto Serif KR', serif;
 /* 메인 롤링 이미지 영역 */
 #section .visual_wrap {position: relative;}
 #section .visual {width: 100%; height: 100%; overflow: hidden; position: relative;}
-#section .visual .slide {width: 400%; height: 100%;}
+#section .visual .slide {width: 400%; height: 100%; transition: all 1.5s;}
 #section .visual .slide li {float: left; width: 25%; height: 100vh; position: relative; }
 #section .visual .slide li:nth-child(1) {width: 25%; height: 100vh; background: url(../img/visual01.png) no-repeat center/cover;}
 #section .visual .slide li:nth-child(2) {width: 25%; height: 100vh; background: url(../img/visual02.png) no-repeat center/cover;}
@@ -170,12 +170,13 @@ font-family: 'Noto Serif KR', serif;
 #section .mission .mission_img img {width: 100%;}
 #section .mission .mission_txt { display: flex; color: #fff;}
 #section .mission .mission_txt .date_num { display: inline-block; font-size: 43px; letter-spacing: -2px; font-weight: bold; position: absolute; top: 80px; left: 120px; font-family: 'Nanum Gothic', sans-serif;}
-#section .mission .mission_txt .date_num p {display: inline-block;}
-#section .mission .mission_txt .year {padding-right: 15px; box-sizing: border-box;}
+#section .mission .mission_txt .date_num .now_date { font-size: 43px; font-weight: bold;font-family: 'GmarketSansMedium'; letter-spacing: 5px;}
+#section .mission .mission_txt .date_num .now_time {font-size: 43px; padding: 20px 0; letter-spacing: 5px; font-family: 'GmarketSansMedium';}
+/* #section .mission .mission_txt .year {padding-right: 15px; box-sizing: border-box;}
 #section .mission .mission_txt .date {padding-right: 20px; box-sizing: border-box;}
 #section .mission .mission_txt .hour {padding-right: 20px; box-sizing: border-box;}
 #section .mission .mission_txt .min {padding-right: 20px; box-sizing: border-box;}
-#section .mission .mission_txt .second {padding-right: 20px; box-sizing: border-box;}
+#section .mission .mission_txt .second {padding-right: 20px; box-sizing: border-box;} */
 #section .mission .mission_txt .campaign {text-align: right; font-size: 36px; letter-spacing: -1px; line-height: 40px; font-family: 'Roboto', sans-serif; font-weight: bold; position: absolute; top: 82px; right: 120px;}
 #section .mission_txt .campaign .title {padding-bottom: 40px; font-size: 43px; letter-spacing: 0;}
 #section .mission_txt .campaign .num {font-size: 60px;}
@@ -336,7 +337,7 @@ font-family: 'Noto Serif KR', serif;
 .sub1_cont4_list li {width: 246px; height: 246px; margin-right: 10px; margin-bottom: 10px;}
 .sub1_cont4_list li img {width: 100%;}
 .sub1_cont4_list li:nth-child(5n) {margin-right: 0;}
-.sub1_cont4 p {margin-top: 120px; font-size: 26px; line-height: 35px; text-align: center; font-weight: 500; font-family: 'Noto Serif KR', serif;}
+.sub1_cont4 p {margin-top: 120px; font-size: 26px; line-height: 35px; text-align: center; font-weight: 500;}
 .sub1_cont4 p span {font-size: 22px; display: block; margin: 30px 0; text-align: center; font-family: 'Noto Sans KR', sans-serif; padding-bottom: 120px;}
 
 
@@ -344,14 +345,14 @@ font-family: 'Noto Serif KR', serif;
 #sub2_container {width: 100%; }
 .sub2_cont1 {width: 90%; margin: 0 auto; padding-top: 120px;}
 .sub2_cont1_top {display: flex; justify-content: space-between; align-items: center;border-bottom: 1px solid rgb(152, 152, 152); padding-bottom: 10px;}
-.sub2_cont1_top h3 {font-size: 24px; font-family: 'Noto Serif KR', serif; letter-spacing: -1px; font-weight: 400; }
+.sub2_cont1_top .sub2_title {font-size: 24px; letter-spacing: -1px; font-weight: 400; color: #94773d;}
 .sub2_cont1_btn button{width: 160px; height: 40px; border-radius: 0;  text-align: center; font-size: 14px; font-weight: 400; line-height: 40px; background-color: #f3f1e3; border: 1px solid #ddd; cursor: pointer;}
 .sub2_cont1_btn .sub2_try {background-color: #fff; }
-.sub2_cont1_btn .sub2_start {background-color: #94773d; transition: all 0.5s; margin-left: 10px;}
-.sub2_cont1_btn .sub2_start:hover {color: #fff; }
+.sub2_cont1_btn .sub2_start {background-color: #94773d; transition: all 0.5s; margin-left: 10px; color: #fff;}
+.sub2_cont1_btn .sub2_start:hover {background-color:#7c6433; }
 .sub2_cont1_img {width: 800px; height: 600px; background: url(../img/sub2_main.jpg) no-repeat center/cover; margin: 40px auto;}
 
-.sub2_tit {font-size: 24px; color: #94773d; font-family: 'Noto Serif KR', serif; font-weight: 300; margin-top: 120px; text-align: center; position: relative;}
+.sub2_tit {font-size: 24px; color: #94773d; font-weight: 300; margin-top: 120px; text-align: center; position: relative;}
 .sub2_tit::before {display: block; content: ""; width: 150px; height: 1px; background-color: #94773d; position: absolute; top: 50%; left: 410px; transform: translateX(-50%); }
 .sub2_tit::after {display: block; content: ""; width: 150px; height: 1px; background-color: #94773d; position: absolute; top: 50%; right: 250px; transform: translateX(-50%); }
 .sub2_service {display: flex; margin-top: 60px; justify-content: center;}
@@ -359,10 +360,10 @@ font-family: 'Noto Serif KR', serif;
 .sub2_service li:last-child {margin-right: 0;}
 .sub2_service_img {width: 84px; height: 84px; margin: 0 auto;}
 .sub2_service_img img {width: 100%;}
-.key {font-size: 22px; color: #94773d; font-family: 'Noto Serif KR', serif; font-weight: 300; padding: 30px 0 ; letter-spacing: -1px; border-bottom: 1px solid #b5b5b57b;}
+.key {font-size: 22px; color: #94773d; font-weight: 300; padding: 30px 0 ; letter-spacing: -1px; border-bottom: 1px solid #b5b5b57b;}
 .explan {font-size: 16px; color: #333; line-height: 28px; padding-top: 20px; font-weight: 300;}
 
-.sub2_cont2 h3 {font-size: 24px; text-align: center; font-family: 'Noto Serif KR', serif; font-weight: 400; color: #94773d; padding-bottom: 10px;}
+.sub2_cont2 h3 {font-size: 24px; text-align: center; font-weight: 400; color: #94773d; padding-bottom: 10px;}
 .sub2_cont2 p {font-size: 18px; color: #94773d; font-weight: 300; text-align: center; padding: 10px 0;}
 .sub2_cont2_img {width: 800px; height: 420px;background: url(../img/sub2_main2.jpg) no-repeat center/cover; margin: 60px auto; }
 .sub2_cont2_list { display: flex; justify-content: center; margin: 40px 0;}
@@ -380,7 +381,7 @@ font-family: 'Noto Serif KR', serif;
 .sub2_process_txt { font-size: 14px; text-align: center; font-weight: 400; line-height: 24px;}
 
 .sub2_cont3 {display: flex; flex-direction: column; align-items: center;}
-.sub2_cont3 h3 {font-size: 24px; text-align: center; font-family: 'Noto Serif KR', serif; font-weight: 400; color: #94773d; padding-bottom: 10px; position: relative;}
+.sub2_cont3 h3 {font-size: 24px; text-align: center; font-weight: 400; color: #94773d; padding-bottom: 10px; position: relative;}
 .sub2_cont3 h3::before {display: block; content: ""; width: 200px; height: 1px; background-color: #94773d; position: absolute; top: 42%; left: -223px;}
 .sub2_cont3 h3::after {display: block; content: ""; width: 200px; height: 1px; background-color: #94773d; position: absolute; top: 42%; right: -223px;}
 .sub2_cont3_way { line-height: 30px; padding: 40px 0; margin-bottom: 50px;}
@@ -389,8 +390,8 @@ font-family: 'Noto Serif KR', serif;
 .sub2_cont3_way li:nth-child(1)::after {background: url(../img/sub2_number_1.png) no-repeat left top/cover;}
 .sub2_cont3_way li:nth-child(2)::after {background: url(../img/sub2_number_2.png) no-repeat left top/cover;}
 .sub2_cont3_way li:nth-child(3)::after {background: url(../img/sub2_number_3.png) no-repeat left top/cover;}
-.free_btn {width: 240px; height: 40px; border-radius: 0;  text-align: center; font-size: 14px; font-weight: 400; line-height: 40px; background-color: #94773d; border: 1px solid #ddd; cursor: pointer; transition: all 0.5s; margin-left: 10px; margin-bottom: 120px;}
-.free_btn:hover { color: #fff;}
+.free_btn {width: 240px; height: 40px; border-radius: 0;  text-align: center; font-size: 14px; font-weight: 400; line-height: 40px; background-color: #94773d; border: 1px solid #ddd; cursor: pointer; transition: all 0.5s; margin-left: 10px; margin-bottom: 120px; color: #fff;}
+.free_btn:hover { background-color:#7c6433;}
 
 /* 서브페이지4_쇼핑 리스트 시작  */
 #sub4_container {width: 100%; padding-bottom: 120px;}
@@ -480,11 +481,8 @@ font-family: 'Noto Serif KR', serif;
     #section .personal_skin .personal_img {height: 500px;}
 
     #section .mission .mission_txt .date_num { font-size: 38px; top: 40px; left: 40px; }
-    #section .mission .mission_txt .year {padding-right: 10px;}
-    #section .mission .mission_txt .date {padding-right: 10px;}
-    #section .mission .mission_txt .hour {padding-right: 10px;}
-    #section .mission .mission_txt .min {padding-right: 10px;}
-    #section .mission .mission_txt .second {padding-right: 10px;}
+    #section .mission .mission_txt .date_num .now_date { font-size: 38px;  letter-spacing: 2px; padding-top: 70px;}
+    #section .mission .mission_txt .date_num .now_time {font-size: 38px; letter-spacing: 2px; }
     #section .mission .mission_txt .campaign {font-size: 32px;top: 100px; right: 40px;}
     #section .mission_txt .campaign .title {padding-bottom: 20px; font-size: 40px;}
     #section .mission_txt .campaign .num {font-size: 54px;}
@@ -714,12 +712,9 @@ font-family: 'Noto Serif KR', serif;
     }
     #section .mission .mission_img img {width: 100%;}
     #section .mission .mission_txt { display: flex; color: #fff;}
-    #section .mission .mission_txt .date_num { font-size: 28px;  top: 30px; left: 30px;}
-    #section .mission .mission_txt .year {padding-right:6px;}
-    #section .mission .mission_txt .date {padding-right: 8px;}
-    #section .mission .mission_txt .hour {padding-right: 8px; }
-    #section .mission .mission_txt .min {padding-right: 10px;}
-    #section .mission .mission_txt .second {padding-right: 10px;}
+    #section .mission .mission_txt .date_num { font-size: 28px;  top: 9px; left: 30px;}
+    #section .mission .mission_txt .date_num .now_date { font-size: 30px;  letter-spacing: 0px; }
+    #section .mission .mission_txt .date_num .now_time {font-size: 30px; letter-spacing: 0px; }
     #section .mission .mission_txt .campaign { font-size: 32px; top: 70px; right: 20px;}
     #section .mission_txt .campaign .title {padding-bottom: 10px; font-size: 36px;}
     #section .mission_txt .campaign .num {font-size: 50px;}
@@ -853,7 +848,10 @@ font-family: 'Noto Serif KR', serif;
     }
     #section .mission .mission_txt .date_num {font-size: 20px;}
     #section .mission_txt .campaign .title {padding-bottom: 5px; font-size: 22px;}
-    #section .mission_txt .campaign .num {font-size: 24px;}
+    #section .mission_txt .campaign .num {font-size: 24px; }
+    #section .mission .mission_txt .date_num {top: 30px; right: 20px; text-align: right;}
+    #section .mission .mission_txt .date_num .now_date { font-size: 22px; padding-top: 0; }
+    #section .mission .mission_txt .date_num .now_time {display: none; }
     #section .mission_txt .campaign .save {padding: 0;}
     #section .mission .vegan {font-size: 14px;}
     #section .crew_active .crew_title img {width: 20px; height: 20px; position: relative; top: 15px;}
@@ -885,14 +883,13 @@ font-family: 'Noto Serif KR', serif;
     .sub1_cont4_list li {height: 198px;}
     .sub1_cont4 p {font-size: 16px;}
 
-    .sub2_cont1_top h3 {font-size: 18px; padding-bottom: 26px;}
+    .sub2_cont1_top p {font-size: 18px; padding-bottom: 26px;}
     .sub2_cont1_img {height: 440px;}
     .sub2_tit {font-size: 18px; margin-top: 45px;}
     .sub2_service {margin-top: 10px;}
     .sub2_service li {height: 180px;}
     .explan {font-size: 14px; line-height: 23px;}
-    .sub2_cont2 h3 {font-size: 16px; padding: 30px 0;}
-    .sub2_cont2 p {line-height: 23px;}
+    .sub2_cont2 p {font-size: 16px; padding: 30px 0; line-height: 23px;}
     .sub2_cont2_list li {height: 380px;}
     .sub2_cont2_process {width: 90%; margin: 60px auto;}
     .sub2_cont2 p {font-size: 14px;}

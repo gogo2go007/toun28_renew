@@ -107,7 +107,7 @@ for(let i = 0; i < pagersBtn.length; i++){
 
 let autoSlide = setInterval(function(){
     slideMove();
-},3000);
+},5000);
 
 stopBtn.addEventListener("click",function(){
    stopBtn.style.display = "none";
@@ -120,7 +120,7 @@ playBtn.addEventListener("click",function(){
     stopBtn.style.display = "block";
     autoSlide = setInterval(function(){
         slideMove();
-    },3000);
+    },5000);
 });
 
 function slideMove(){
@@ -145,8 +145,6 @@ function slideMove(){
 //           제품소개 아코디언
 //           top 버튼
 //           footer 아코디언
-$(document).ready(function(){
-
     $(window).scroll(function(){
         if($(this).scrollTop() > 4800 && $(this).scrollTop() < 8400){
             $(".scr_up").addClass("on");
@@ -160,6 +158,33 @@ $(document).ready(function(){
     $(".scr_up").click(function(){
         $("html,body").stop().animate({scrollTop:0},500)
     });
+
+    // 데이트객체
+    function addZero(num) {
+        if(num < 10){
+            return "0"+ num;
+        }
+        return ""+ num;
+    }
+
+    const showDate = function(){
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = addZero(now.getMonth()+1);
+        const date = addZero(now.getDate());
+        const day = now.getDate();
+
+        const hour = addZero(now.getHours());
+        const min = addZero(now.getMinutes());
+        const sec = addZero(now.getSeconds());
+
+        document.querySelector(".date_num .now_date").textContent = `${year}/${month}/${date}`;
+        document.querySelector(".date_num .now_time").innerHTML = `<span>${hour}</span>:<span>${min}</span>:${sec}`;
+    }
+    showDate();
+    setInterval(showDate, 1000);
+
+
     // 미션 숫자 카운트 영역
     let a = 0;
     $(window).scroll(function(){
@@ -206,6 +231,7 @@ $(document).ready(function(){
             }
         }
     });
+
 
 
     // 톤 크루 영역 bg 이미지가 스크롤 했을때 왼쪽에서 오른쪽으로 나타남
@@ -285,7 +311,6 @@ $(document).ready(function(){
         $(".f_inform_off").addClass("on");
     })
 
-});
 
 
 
